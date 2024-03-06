@@ -15,6 +15,7 @@ print("                                `'                            '-._|")
 print("")
 print("Pokemon Battle")
 print("")
+x = 0
 
 import json
 import random
@@ -36,9 +37,19 @@ while True:
     choice = input("Enter your choice (1-5): ")
 
     if choice == '1':
-        # https://www.w3schools.com/python/python_dictionaries_access.asp
+        index = input("Enter a number (1-43): ")
+        number = int(index) - 1
+        print(pokemons[int(number)])
         pass
+        # https://www.w3schools.com/python/python_dictionaries_access.asp
     elif choice == '2':
+        def TenStrongest(pokemon):
+            return int(pokemon["total"])
+        pokemons.sort(key = TenStrongest, reverse = True)
+        while x < 10:
+            x = x + 1
+            print(pokemons[:x])
+        pass
         # https://www.w3schools.com/python/python_lists_sort.asp
         pass
     elif choice == '3':
